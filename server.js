@@ -2,14 +2,14 @@ var express = require('express');
 var app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname );
-app.use(express.static(__dirname));
+// app.set('views', __dirname );
+app.use(express.static('assets'));
 
 song = {
   verse1: 'This is the song that never ends',
   verse2: 'Yea some people started it not knowing what it was',
   verse3: 'And they\'ll continue singing it because',
-}
+};
 
 app.get('/', function(req, res) {
   res.render('index');
@@ -26,7 +26,7 @@ app.get('/song/update', function(req, res) {
     song.verse3 = req.query.verse3;
   }
   res.redirect('/');
-})
+});
 
 app.get('/song/1', function(req, res) {
   res.render('song', {
@@ -49,7 +49,10 @@ app.get('/song/1/2/3', function(req, res) {
   });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(process.env.PORT || 3000, function () {
   var port = server.address().port;
   console.log('Server up and listening on', port);
 });
+
+
+
