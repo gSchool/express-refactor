@@ -20,17 +20,17 @@ window.onload = function(){
         verse1: textInputs[0].value,
         verse2: textInputs[1].value,
         verse3: textInputs[2].value,
-      }
+      };
 
       window.localStorage.storyData = JSON.stringify(storyData);
-  })
+  });
 
   // reseting a story
   reset.addEventListener('click', function(e) {
-    textInputs[0].value = "This is the song that never ends"
-    textInputs[1].value = "Yea some people started it not knowing what it was"
-    textInputs[2].value = "and they'll continue singing it because"
+    textInputs[0].value = "This is the song that never ends";
+    textInputs[1].value = "Yea some people started it not knowing what it was";
+    textInputs[2].value = "and they'll continue singing it because";
     submit.click();
-  })
+  });
 
-}
+};

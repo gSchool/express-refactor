@@ -16,4 +16,4 @@ window.onload = function(){
     verse.innerText = currentData.verse3;
   }
 
-}
+};
